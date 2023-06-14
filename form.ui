@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QWidget" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1500</width>
+    <height>715</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ImEdit by Jakub Krąpiec</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>49</y>
+     <width>251</width>
+     <height>531</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="tools">
+    <item>
+     <widget class="QPushButton" name="openButton">
+      <property name="text">
+       <string>Otwórz</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="saveButton">
+      <property name="text">
+       <string>Zapisz</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="saveAsButton">
+      <property name="text">
+       <string>Zapisz jako...</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="brightnessButton">
+      <property name="text">
+       <string>Jasność</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="contrastButton">
+      <property name="text">
+       <string>Kontrast</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="cropButton">
+      <property name="text">
+       <string>Przytnij</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="saturationButton">
+      <property name="text">
+       <string>Nasycenie</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="sharpnessButton">
+      <property name="text">
+       <string>Ostrość</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="blurButton">
+      <property name="text">
+       <string>Rozmycie Gaussa</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="findEdgesButton">
+      <property name="text">
+       <string>Znajdź krawędzie</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="enhanceEdgesButton">
+      <property name="text">
+       <string>Popraw krawędzie</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="identifyButton">
+      <property name="text">
+       <string>Zidentyfikuj obiekty</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>279</x>
+     <y>49</y>
+     <width>1201</width>
+     <height>531</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="images">
+    <item>
+     <widget class="QLabel" name="imageField">
+      <property name="text">
+       <string>Otwórz zdjęcie, aby rozpocząć edytowanie</string>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QLabel" name="originalImageField">
+      <property name="text">
+       <string>Tutaj będzie widoczny oryginalny obraz</string>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="histogramLabel">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>590</y>
+     <width>331</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="text">
+    <string>Histogram</string>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>590</y>
+     <width>671</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Data utworzenia</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDateTimeEdit" name="creationDate">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+        <property name="readOnly">
+         <bool>false</bool>
+        </property>
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Wysokość</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="heightLabel">
+          <property name="text">
+           <string>0 px</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Data ostatniej modyfikacji</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QDateTimeEdit" name="modificationDate">
+        <property name="calendarPopup">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Głębia kolorów</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="depthLabel">
+          <property name="text">
+           <string>0 b</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Rozmiar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="sizeLabel">
+        <property name="text">
+         <string>0 B</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Szerokość</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="widthLabel">
+          <property name="text">
+           <string>0 px</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="undoButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>10</y>
+     <width>93</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cofnij</string>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="redoButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>10</y>
+     <width>93</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ponów</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>391</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>ImEdit by Jakub Krąpiec</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="turnLeftButton">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>590</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Obróć w lewo</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="turnRightButton">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>660</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Obróć w prawo</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="itemsList">
+   <property name="geometry">
+    <rect>
+     <x>1160</x>
+     <y>590</y>
+     <width>321</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="rowCount">
+    <number>0</number>
+   </property>
+   <property name="columnCount">
+    <number>2</number>
+   </property>
+   <attribute name="horizontalHeaderMinimumSectionSize">
+    <number>42</number>
+   </attribute>
+   <attribute name="verticalHeaderMinimumSectionSize">
+    <number>29</number>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>Nazwa obiektu</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Pewność</string>
+    </property>
+   </column>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
